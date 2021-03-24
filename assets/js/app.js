@@ -120,7 +120,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("../startercode/assets/data/data.csv").then(function(scatData, err) {
+d3.csv("assets/data/data.csv").then(function(scatData, err) {
   if (err) throw err;
 
   // parse data
