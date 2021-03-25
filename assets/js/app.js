@@ -98,6 +98,24 @@ function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
 
   return textGroup
 }
+
+//function to stylize x-axis values for tooltips
+function styleX(value, chosenXAxis) {
+
+  //style based on variable
+  //poverty
+  if (chosenXAxis === 'poverty') {
+      return `${value}%`;
+  }
+  //household income
+  else if (chosenXAxis === 'income') {
+      return `$${value}`;
+  }
+  else {
+    return `${value}`;
+  }
+}
+
 // function used for updating circles group with new tooltip
 function updateToolTip(chosenXAxis,chosenYAxis, circlesGroup) {
 
@@ -107,25 +125,25 @@ function updateToolTip(chosenXAxis,chosenYAxis, circlesGroup) {
     xLabel = "Poverty:";
   }
   else if(chosenXAxis === "age") {
-    xLabel = "Age:"  
+    xLabel = "Age (Median):"  
   }else{
-    xLabel = "Income:"  
+    xLabel = "H'hold Income:"
   }
 
   if (chosenYAxis === "smokes") {
-    yLabel = "Smokes:";
+    yLabel = "Smokers:";
   }
   else if(chosenYAxis === "healthcare") {
-    yLabel = "Healthcare:"  
+    yLabel = "Healthcare Lack:"  
   }else{
-    yLabel = "Obese:"  
+    yLabel = "Obesity:"  
   }
 
   var toolTip = d3.tip()
     .attr("class", "tooltip")
     .offset([80, -60])
     .html(function(d) {
-      return (`State: ${d.state}<br>${xLabel} ${d[chosenXAxis]}<br>${yLabel} ${d[chosenYAxis]}`);
+      return (`State: ${d.state}<br>${xLabel} ${styleX(d[chosenXAxis], chosenXAxis)}<br>${yLabel} ${d[chosenYAxis]}%`);
     });
 
   circlesGroup.call(toolTip);
@@ -242,17 +260,19 @@ var obesityLabel = yXLabelsGroup.append("text")
     .style('font-family', 'bahnschrift')
     .text("Lacks Healthcare (%)");
   
-  var textGroup = chartGroup.selectAll(".stateText")
-    .data(scatData)
-    .enter()
-    .append("text")
-    .classed('stateText', true)
-    .style('font-family', 'bahnschrift')      
-    .attr("font-size", "8px")
-    .attr("fill", "blue")
-    .attr("dy", ".4em")
-    .attr("dx", "-.7em")
-    .attr("x", d => xLinearScale(d[chosenXAxis]))
+
+  
+    var textGroup = chartGroup.selectAll(".stateText")
+      .data(scatData)
+      .enter()
+      .append("text")
+      .classed('stateText', true)
+      .style('font-family', 'bahnschrift')      
+      .attr("font-size", "8px")
+      .attr("fill", "blue")
+      .attr("dy", ".4em")
+      .attr("dx", "-.7em")
+      .attr("x", d => xLinearScale(d[chosenXAxis]))
     .attr("y", d => yLinearScale(d[chosenYAxis]))
     .text(function(d){return d.abbr});
   // updateToolTip function above csv import
@@ -267,6 +287,8 @@ var obesityLabel = yXLabelsGroup.append("text")
 
         // replaces chosenXAxis with value
         chosenXAxis = value;
+
+        // console.log(chosenXAxis)
 
         // functions here found above csv import
         // updates x scale for new data
