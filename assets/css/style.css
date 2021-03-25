@@ -42,11 +42,7 @@ body {
   width: 400px;
   height: 300px;
   content: " ";
-  background-image: url("maxresdefault.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
-  opacity: 0.3;
+  
 }
 
 .tooltip {
@@ -55,7 +51,7 @@ body {
   height: 60px;
   padding: 2px;
   padding-top: 8px;
-  font: 12px sans-serif;
+  font: 12px bahnschrift;
   color: white;
   text-align: center;
   background: #551aaf;
@@ -64,7 +60,7 @@ body {
 }
 
 .axis-text {
-  font-family: sans-serif;
+  font-family: bahnschrift;
   font-weight: bold;
   fill: #551aaf;
   text-anchor: middle;
