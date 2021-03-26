@@ -109,7 +109,7 @@ function styleX(value, chosenXAxis) {
   }
   //household income
   else if (chosenXAxis === 'income') {
-      return `$${value}`;
+      return `USD ${value}`;
   }
   else {
     return `${value}`;
@@ -125,16 +125,16 @@ function updateToolTip(chosenXAxis,chosenYAxis, circlesGroup) {
     xLabel = "Poverty:";
   }
   else if(chosenXAxis === "age") {
-    xLabel = "Age (Median):"  
+    xLabel = "Age:"  
   }else{
-    xLabel = "H'hold Income:"
+    xLabel = "Income:"
   }
 
   if (chosenYAxis === "smokes") {
     yLabel = "Smokers:";
   }
   else if(chosenYAxis === "healthcare") {
-    yLabel = "Healthcare Lack:"  
+    yLabel = "Health Care:"  
   }else{
     yLabel = "Obesity:"  
   }
