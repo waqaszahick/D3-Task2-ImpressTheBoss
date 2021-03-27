@@ -1,5 +1,5 @@
 .aText {
-  font-family: bahnschrift;
+  font-family: candara;
   font-size: 16px;
   text-anchor: middle;
 }
@@ -25,7 +25,7 @@
 
 /* font size dependent on radius, see app.js */
 .stateText {
-  font-family: bahnschrift;
+  font-family: candara;
   fill: #fff;
   text-anchor: middle;
 }
