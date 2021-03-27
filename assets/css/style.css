@@ -51,7 +51,7 @@ body {
   height: 60px;
   padding: 2px;
   padding-top: 8px;
-  font: 12px calibri;
+  font: 12px sans-serif;
   color: lightpink;
   text-align: center;
   background: #551aaf;
@@ -60,7 +60,7 @@ body {
 }
 
 .axis-text {
-  font-family: calibri;
+  font-family: sans-serif;
   font-weight: bold;
   fill: #551aaf;
   text-anchor: middle;
