@@ -210,7 +210,7 @@ d3.csv("assets/data/data.csv").then(function(scatData, err) {
     .attr("y", 20)
     .attr("value", "poverty") // value to grab for event listener
     .classed("active", true)
-    .style('font-family', 'calibri')
+    .style('font-family', 'sans-serif')
     .text("In Poverty (%)");
 
   var ageLabel = XLabelsGroup.append("text")
@@ -218,7 +218,7 @@ d3.csv("assets/data/data.csv").then(function(scatData, err) {
     .attr("y", 40)
     .attr("value", "age") // value to grab for event listener
     .classed("inactive", true)
-    .style('font-family', 'calibri')
+    .style('font-family', 'sans-serif')
     .text("Age (Median)");
 
   var houseHoldLabel = XLabelsGroup.append("text")
@@ -226,7 +226,7 @@ d3.csv("assets/data/data.csv").then(function(scatData, err) {
     .attr("y", 60)
     .attr("value", "income") // value to grab for event listener
     .classed("inactive", true)
-    .style('font-family', 'calibri')
+    .style('font-family', 'sans-serif')
     .text("Household Income (Median)");
 
     var yXLabelsGroup = chartGroup.append("g")
@@ -239,7 +239,7 @@ var obesityLabel = yXLabelsGroup.append("text")
   .attr("dy", "1em")
   .attr("value","obesity")
   .classed("inactive", true)
-  .style('font-family', 'calibri')
+  .style('font-family', 'sans-serif')
   .text("Obese (%)");
   
   var smokeLabel = yXLabelsGroup.append("text")
@@ -248,7 +248,7 @@ var obesityLabel = yXLabelsGroup.append("text")
     .attr("dy", "1em")
     .attr("value","smokes")
     .classed("inactive", true)
-    .style('font-family', 'calibri')
+    .style('font-family', 'sans-serif')
     .text("Smokes (%)");
 
   var healthcareLabel = yXLabelsGroup.append("text")    
@@ -257,7 +257,7 @@ var obesityLabel = yXLabelsGroup.append("text")
     .attr("dy", "1em")
     .attr("value", "healthcare")
     .classed("active", true)
-    .style('font-family', 'calibri')
+    .style('font-family', 'sans-serif')
     .text("Lacks Healthcare (%)");
   
 
@@ -267,7 +267,7 @@ var obesityLabel = yXLabelsGroup.append("text")
       .enter()
       .append("text")
       .classed('stateText', true)
-      .style("font-family", "calibri")
+      .style("font-family", "sans-serif")
       .attr("font-size", "8px")
       .attr("fill", "blue")
       .attr("dy", ".4em")
